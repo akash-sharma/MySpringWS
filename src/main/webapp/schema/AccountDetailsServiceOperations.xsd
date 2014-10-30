@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+		xmlns="http://reqres.data.ws.akash.com" 
+		xmlns:userDetails="http://data.ws.akash.com" 
+		targetNamespace="http://reqres.data.ws.akash.com" elementFormDefault="qualified">
+		
+	<xsd:import namespace="http://data.ws.akash.com" schemaLocation="AccountDetails.xsd"/>
+	<xsd:element name="UserDetailsRequest">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="userId" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="UserDetailsResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="AccountDetails" type="userDetails:UserDetails"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
