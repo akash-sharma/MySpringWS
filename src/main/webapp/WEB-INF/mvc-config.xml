@@ -17,13 +17,13 @@
     
          
     <context:component-scan base-package="com.akash.ws.data com.akash.ws.data.reqres com.akash.ws.endpoint 
-    								com.akash.ws.service com.akash.ws.service.impl"/>
+    								com.akash.ws.service com.akash.ws.service.impl  com.akash.ws.controller"/>
 
     <mvc:annotation-driven />
     <sws:annotation-driven />
     
     
-    <bean id="UserDetailsService" class="org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition" lazy-init="true">  
+     <bean id="UserDetailsService" class="org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition" lazy-init="true">  
       	<property name="schemaCollection">  
         	<bean class="org.springframework.xml.xsd.commons.CommonsXsdSchemaCollection">  
           		<property name="inline" value="true" />  
@@ -37,7 +37,12 @@
       	<property name="portTypeName" value="UserDetailsService"/>  
       	<property name="serviceName" value="UserDetailsServices" />  
       	<property name="locationUri" value="/endpoints"/>  
-    </bean>
+    </bean> 
+    
+    <sws:dynamic-wsdl id="loginmanager" portTypeName="LoginService" locationUri="/endpoints/"
+                  targetNamespace="http://reqres.data.ws.akash.com">
+    <sws:xsd location="schema/AccountDetailsServiceOperations.xsd"/>
+</sws:dynamic-wsdl>
 
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 	        <!-- Example: a logical view name of 'showMessage' is mapped to '/WEB-INF/jsp/showMessage.jsp' -->
