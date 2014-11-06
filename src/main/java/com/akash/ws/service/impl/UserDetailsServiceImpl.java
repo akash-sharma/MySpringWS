@@ -11,6 +11,7 @@ import com.akash.ws.service.UserDetailsService;
 public class UserDetailsServiceImpl implements UserDetailsService {
 
 	public UserDetailsResponse getUserDetails(String userId) {
+		System.out.println("UserDetailsServiceImpl.getUserDetails()");
 		UserDetailsResponse udr=new UserDetailsResponse();
 		UserDetails ud=new UserDetails();
 		ud.setAge(35);

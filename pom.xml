@@ -1,4 +1,7 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+		
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.springframework.samples.service.service</groupId>
   <artifactId>MySpringWS</artifactId>
@@ -16,11 +19,11 @@
 		<jsp.version>2.2</jsp.version>
 		<jstl.version>1.2</jstl.version>
 		<servlet.version>2.5</servlet.version>
-		
 
 		<!-- Spring -->
 		<spring-framework.version>3.2.3.RELEASE</spring-framework.version>
 		<spring.ws.version>2.0.0.RELEASE</spring.ws.version>
+		<xmlschema.version>1.4.3</xmlschema.version>
 
 		<!-- Hibernate / JPA -->
 		<hibernate.version>4.2.1.Final</hibernate.version>
@@ -36,6 +39,11 @@
 	
 	<build>
 		<plugins>
+		
+			<!-- 
+				This plugin helps to generate class files for request response objects and 
+				their respective data 
+			-->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>jaxb2-maven-plugin</artifactId>
@@ -152,6 +160,13 @@
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
 			<scope>test</scope>
+		</dependency>
+		
+		<!-- Helps for generating dynamic wsdl -->
+		<dependency>
+			<groupId>org.apache.ws.commons.schema</groupId>
+			<artifactId>XmlSchema</artifactId>
+			<version>${xmlschema.version}</version>
 		</dependency>
 
 	</dependencies>	

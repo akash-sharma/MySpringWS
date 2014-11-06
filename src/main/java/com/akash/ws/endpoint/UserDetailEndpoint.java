@@ -20,9 +20,10 @@ public class UserDetailEndpoint {
 	@Qualifier("userService")
 	private UserDetailsService userDetailsService;
 	
-	@PayloadRoot(localPart="getUserDetail",namespace=NAMESPACE)
+	@PayloadRoot(localPart="UserDetailsRequest",namespace=NAMESPACE)
 	public @ResponsePayload UserDetailsResponse getUserDetail(@RequestPayload UserDetailsRequest userDetail) {
 		
+		System.out.println("UserDetailEndpoint.getUserDetail()");
 		return userDetailsService.getUserDetails(userDetail.getUserId());
 	}
 }
