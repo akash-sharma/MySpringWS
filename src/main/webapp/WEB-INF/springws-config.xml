@@ -20,25 +20,12 @@
 
     <sws:annotation-driven />
     
-     <!-- <bean id="UserDetailsService" class="org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition" lazy-init="true">  
-      	<property name="schemaCollection">  
-        	<bean class="org.springframework.xml.xsd.commons.CommonsXsdSchemaCollection">  
-          		<property name="inline" value="true" />  
-          		<property name="xsds">  
-            		<list>  
-              			<value>schema/AccountDetailsServiceOperations.xsd</value>  
-            		</list>  
-          		</property>  
-        	</bean>  
-      	</property>  
-      	<property name="portTypeName" value="UserDetailsService"/>  
-      	<property name="serviceName" value="UserDetailsServices" />  
-      	<property name="locationUri" value="/endpoints"/>  
-    </bean>  -->
-    
-    <sws:dynamic-wsdl id="loginmanager" portTypeName="LoginService" locationUri="/endpoints/"
-                  targetNamespace="http://reqres.data.ws.akash.com">
+    <sws:dynamic-wsdl id="loginmanager" portTypeName="LoginService" locationUri="/endpoints/">
     	<sws:xsd location="schema/AccountDetailsServiceOperations.xsd"/>
 	</sws:dynamic-wsdl>
 
+	<sws:dynamic-wsdl id="empSal" portTypeName="EmpService" locationUri="/endpoints/">
+    	<sws:xsd location="schema/Employee.xsd"/>
+	</sws:dynamic-wsdl>
+	
 </beans>

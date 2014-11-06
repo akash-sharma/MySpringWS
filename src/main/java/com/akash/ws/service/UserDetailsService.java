@@ -9,3 +9,4 @@ public interface UserDetailsService {
 
 
 //		http://briansjavablog.blogspot.in/2013/01/spring-web-services-tutorial.html
+//		http://stackoverflow.com/questions/1155809/spring-ws-generates-wsdl-without-operations

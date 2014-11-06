@@ -6,18 +6,15 @@
 //
 
 
-package com.akash.ws.data;
+package com.akash.ws.data.emp.employee;
 
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.XmlElementDecl;
 import javax.xml.bind.annotation.XmlRegistry;
-import javax.xml.namespace.QName;
 
 
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
- * generated in the com.akash.ws.data package. 
+ * generated in the com.akash.ws.data.emp.employee package. 
  * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
@@ -31,30 +28,28 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _UserDetails_QNAME = new QName("http://data.ws.akash.com", "UserDetails");
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.akash.ws.data
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.akash.ws.data.emp.employee
      * 
      */
     public ObjectFactory() {
     }
 
     /**
-     * Create an instance of {@link UserDetails }
+     * Create an instance of {@link EmployeeSalRequest }
      * 
      */
-    public UserDetails createUserDetails() {
-        return new UserDetails();
+    public EmployeeSalRequest createEmployeeSalRequest() {
+        return new EmployeeSalRequest();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link UserDetails }{@code >}}
+     * Create an instance of {@link EmployeeSalResponse }
      * 
      */
-    @XmlElementDecl(namespace = "http://data.ws.akash.com", name = "UserDetails")
-    public JAXBElement<UserDetails> createUserDetails(UserDetails value) {
-        return new JAXBElement<UserDetails>(_UserDetails_QNAME, UserDetails.class, null, value);
+    public EmployeeSalResponse createEmployeeSalResponse() {
+        return new EmployeeSalResponse();
     }
 
 }

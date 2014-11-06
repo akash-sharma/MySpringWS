@@ -6,14 +6,13 @@
 //
 
 
-package com.akash.ws.data.reqres;
+package com.akash.ws.data.emp.employee;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.akash.ws.data.UserDetails;
 
 
 /**
@@ -26,7 +25,7 @@ import com.akash.ws.data.UserDetails;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="AccountDetails" type="{http://data.ws.akash.com}UserDetails"/>
+ *         &lt;element name="employeeSalary" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -37,36 +36,36 @@ import com.akash.ws.data.UserDetails;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "accountDetails"
+    "employeeSalary"
 })
-@XmlRootElement(name = "UserDetailsResponse")
-public class UserDetailsResponse {
+@XmlRootElement(name = "EmployeeSalResponse")
+public class EmployeeSalResponse {
 
-    @XmlElement(name = "AccountDetails", required = true)
-    protected UserDetails accountDetails;
+    @XmlElement(required = true)
+    protected String employeeSalary;
 
     /**
-     * Gets the value of the accountDetails property.
+     * Gets the value of the employeeSalary property.
      * 
      * @return
      *     possible object is
-     *     {@link UserDetails }
+     *     {@link String }
      *     
      */
-    public UserDetails getAccountDetails() {
-        return accountDetails;
+    public String getEmployeeSalary() {
+        return employeeSalary;
     }
 
     /**
-     * Sets the value of the accountDetails property.
+     * Sets the value of the employeeSalary property.
      * 
      * @param value
      *     allowed object is
-     *     {@link UserDetails }
+     *     {@link String }
      *     
      */
-    public void setAccountDetails(UserDetails value) {
-        this.accountDetails = value;
+    public void setEmployeeSalary(String value) {
+        this.employeeSalary = value;
     }
 
 }

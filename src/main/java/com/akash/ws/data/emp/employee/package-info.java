@@ -5,5 +5,5 @@
 // Generated on: 2014.11.06 at 07:50:38 PM IST 
 //
 
-@javax.xml.bind.annotation.XmlSchema(namespace = "http://data.ws.akash.com", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
-package com.akash.ws.data;
+@javax.xml.bind.annotation.XmlSchema(namespace = "http://emp.data.ws.akash.com/employee", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+package com.akash.ws.data.emp.employee;
