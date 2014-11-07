@@ -28,4 +28,15 @@
     	<sws:xsd location="schema/Employee.xsd"/>
 	</sws:dynamic-wsdl>
 	
+	<sws:interceptors>
+		<bean class="org.springframework.ws.server.endpoint.interceptor.PayloadLoggingInterceptor" />
+	
+		<bean id="validatingInterceptor"
+		        class="com.akash.ws.interceptor.PayloadValidatingInterceptorWithSourceFix">
+		    <property name="schema" value="schema/Employee.xsd"/>
+		    <property name="validateRequest" value="true"/>
+		    <property name="validateResponse" value="true"/>
+		</bean>
+	</sws:interceptors>
+	
 </beans>
