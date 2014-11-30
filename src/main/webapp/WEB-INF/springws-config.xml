@@ -20,11 +20,11 @@
 
     <sws:annotation-driven />
     
-    <sws:dynamic-wsdl id="loginmanager" portTypeName="LoginService" locationUri="/endpoints/">
-    	<sws:xsd location="schema/AccountDetailsServiceOperations.xsd"/>
+    <sws:dynamic-wsdl id="UserDetailsService" portTypeName="UserDetailsServicePort" locationUri="/endpoints/">
+    	<sws:xsd location="schema/UserDetails.xsd"/>
 	</sws:dynamic-wsdl>
 
-	<sws:dynamic-wsdl id="empSal" portTypeName="EmpService" locationUri="/endpoints/">
+	<sws:dynamic-wsdl id="empSal" portTypeName="EmpService" locationUri="/endpoints/" >
     	<sws:xsd location="schema/Employee.xsd"/>
 	</sws:dynamic-wsdl>
 	

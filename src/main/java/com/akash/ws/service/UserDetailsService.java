@@ -1,6 +1,6 @@
 package com.akash.ws.service;
 
-import com.akash.ws.data.reqres.UserDetailsResponse;
+import com.akash.ws.server.userdetails.stub.UserDetailsResponse;
 
 public interface UserDetailsService {
 	

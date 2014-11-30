@@ -1,3 +1,9 @@
+WSDL URLs :
+
+http://localhost:8080/MySpringWS/endpoints/loginmanager.wsdl
+http://localhost:8080/MySpringWS/endpoints/empSal.wsdl
+
+
 MySpringWS
 ==========
 spring web service => http://briansjavablog.blogspot.in/2013/01/spring-web-services-tutorial.html

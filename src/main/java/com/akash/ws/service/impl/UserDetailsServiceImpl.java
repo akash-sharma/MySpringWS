@@ -2,9 +2,9 @@ package com.akash.ws.service.impl;
 
 import org.springframework.stereotype.Service;
 
-import com.akash.ws.data.UserDetails;
-import com.akash.ws.data.UserGender;
-import com.akash.ws.data.reqres.UserDetailsResponse;
+import com.akash.ws.server.userdetails.stub.UserDetails;
+import com.akash.ws.server.userdetails.stub.UserDetailsResponse;
+import com.akash.ws.server.userdetails.stub.UserGender;
 import com.akash.ws.service.UserDetailsService;
 
 @Service("userService")

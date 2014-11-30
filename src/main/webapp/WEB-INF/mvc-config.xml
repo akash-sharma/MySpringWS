@@ -14,8 +14,10 @@
 			http://www.springframework.org/schema/context 
 			http://www.springframework.org/schema/context/spring-context.xsd">
          
-    <context:component-scan base-package="com.akash.ws.data com.akash.ws.data.reqres com.akash.ws.endpoint 
-    								com.akash.ws.service com.akash.ws.service.impl  com.akash.ws.controller"/>
+
+    <context:component-scan base-package="com.akash.ws.client  com.akash.ws.data  com.akash.ws.data.reqres 
+    								com.akash.ws.endpoint  com.akash.ws.service  com.akash.ws.service.impl  
+    								com.akash.ws.controller "/>
 
     <mvc:annotation-driven />
 
