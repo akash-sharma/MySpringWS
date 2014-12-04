@@ -51,26 +51,42 @@
 			  </configuration>
 			</plugin>
 			
-			<!-- <plugin>
+			<plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>jaxws-maven-plugin</artifactId>
                 <version>1.10</version>
                 <executions>
                     <execution>
+                    	<id>UserDetailsWsdlService</id>
                         <goals>
                             <goal>wsimport</goal>
                         </goals>
                         <configuration>
                             <wsdlUrls>
-                                <wsdlUrl>${basedir}/src/main/webapp/wsdl/loginmanager.wsdl</wsdlUrl>
+                                <wsdlUrl>${basedir}/src/main/webapp/wsdl/UserDetailsWsdlService.wsdl</wsdlUrl>
                             </wsdlUrls>
-                            <packageName>com.akash.ws.service.schema</packageName>
+                            <packageName>com.akash.ws.client.stub.userdetail</packageName>
+                            <sourceDestDir>${basedir}/src/main/java</sourceDestDir>
+                     	</configuration>
+                    </execution>
+                    
+                    <execution>
+                    	<id>EmployeeWsdlService</id>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlUrls>
+                                <wsdlUrl>${basedir}/src/main/webapp/wsdl/EmployeeWsdlService.wsdl</wsdlUrl>
+                            </wsdlUrls>
+                            <packageName>com.akash.ws.client.stub.employee</packageName>
                             <sourceDestDir>${basedir}/src/main/java</sourceDestDir>
                             <destDir>${basedir}/target/jaxws</destDir>
                         </configuration>
                     </execution>
+                    
                 </executions>
-            </plugin> -->
+            </plugin>
 			
 		</plugins>
 	</build>
