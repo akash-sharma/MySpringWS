@@ -1,0 +1,54 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:sch="http://data.ws.akash.com/schema/employee" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://data.ws.akash.com/schema/employee" targetNamespace="http://data.ws.akash.com/schema/employee">
+	<wsdl:types>
+		<xsd:schema xmlns="http://data.ws.akash.com/schema/employee"
+			xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified"
+			elementFormDefault="qualified" targetNamespace="http://data.ws.akash.com/schema/employee">
+			<xsd:element name="EmployeeSalRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="employeeId" type="xsd:int" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="EmployeeSalResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="employeeSalary" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="EmployeeSalResponse">
+		<wsdl:part element="tns:EmployeeSalResponse" name="EmployeeSalResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="EmployeeSalRequest">
+		<wsdl:part element="tns:EmployeeSalRequest" name="EmployeeSalRequest"></wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="EmployeeWsdlServicePort">
+		<wsdl:operation name="EmployeeSal">
+			<wsdl:input message="tns:EmployeeSalRequest" name="EmployeeSalRequest"></wsdl:input>
+			<wsdl:output message="tns:EmployeeSalResponse" name="EmployeeSalResponse"></wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="EmployeeWsdlServicePortSoap11" type="tns:EmployeeWsdlServicePort">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="EmployeeSal">
+			<soap:operation soapAction="" />
+			<wsdl:input name="EmployeeSalRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="EmployeeSalResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="EmployeeWsdlServicePortService">
+		<wsdl:port binding="tns:EmployeeWsdlServicePortSoap11" name="EmployeeWsdlServicePortSoap11">
+			<soap:address location="http://localhost:8080/MySpringWS/endpoints/" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

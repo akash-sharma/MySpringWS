@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
-		xmlns="http://reqres.data.ws.akash.com/userdetails" 
-		xmlns:tns="http://reqres.data.ws.akash.com/userdetails" 
-		targetNamespace="http://reqres.data.ws.akash.com/userdetails"
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"  
+		xmlns:cust="http://data.ws.akash.com/schema/userdetails" 
+		targetNamespace="http://data.ws.akash.com/schema/userdetails"
 		elementFormDefault="qualified">
 		
 	<xsd:element name="UserDetailsRequest">
 		<xsd:complexType>
 			<xsd:sequence>
-				<xsd:element name="UserData" type="UserData"/>
+				<xsd:element name="userData" type="cust:userData"/>
 			</xsd:sequence>
 		</xsd:complexType>
 	</xsd:element>
 	
-	<xsd:complexType name="UserData">
+	<xsd:complexType name="userData">
 		<xsd:sequence>
 			<xsd:element name="userId" type="xsd:string"/>
 		</xsd:sequence>
@@ -22,23 +21,23 @@
 	<xsd:element name="UserDetailsResponse">
 		<xsd:complexType>
 			<xsd:sequence>
-				<xsd:element  name="AccountDetails" type="tns:UserDetails"/>
+				<xsd:element  name="fullUserDetails" type="cust:fullUserDetails"/>
 			</xsd:sequence>
 		</xsd:complexType>
 	</xsd:element>
 	
-	<xsd:complexType name="UserDetails">
+	<xsd:complexType name="fullUserDetails">
 		<xsd:sequence>
 			<xsd:element name="userId" type="xsd:string"/>
 			<xsd:element name="username" type="xsd:string"/>
 			<xsd:element name="age" type="xsd:int"/>
 			<xsd:element name="emailId" type="xsd:string"/>
 			<xsd:element name="userSalary" type="xsd:double"/>
-			<xsd:element name="userGender" type="tns:UserGender"/>
+			<xsd:element name="userGender" type="cust:userGender"/>
 		</xsd:sequence>
 	</xsd:complexType>
 	
-	<xsd:simpleType name="UserGender">
+	<xsd:simpleType name="userGender">
 		<xsd:restriction base="xsd:string">
 			<xsd:enumeration value="Male"/>
 			<xsd:enumeration value="Female"/>

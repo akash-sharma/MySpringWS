@@ -7,7 +7,7 @@ import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
-import com.akash.ws.server.userdetails.stub.UserDetails;
+import com.akash.ws.server.userdetails.stub.FullUserDetails;
 import com.akash.ws.server.userdetails.stub.UserDetailsRequest;
 import com.akash.ws.server.userdetails.stub.UserDetailsResponse;
 import com.akash.ws.server.userdetails.stub.UserGender;
@@ -16,7 +16,7 @@ import com.akash.ws.service.UserDetailsService;
 @Endpoint
 public class UserDetailEndpoint {
 
-	private static final String NAMESPACE="http://reqres.data.ws.akash.com/userdetails";
+	private static final String NAMESPACE="http://data.ws.akash.com/schema/userdetails";
 	
 	@Autowired
 	@Qualifier("userService")
@@ -27,14 +27,14 @@ public class UserDetailEndpoint {
 		
 		System.out.println("UserDetailEndpoint.getUserDetail()");
 		UserDetailsResponse udr=new UserDetailsResponse();
-		UserDetails ud=new UserDetails();
+		FullUserDetails ud=new FullUserDetails();
 		ud.setAge(35);
 		ud.setEmailId("obama@gmail.com");
-		ud.setUserGender(UserGender.MALE);
 		ud.setUserId("1");
+		ud.setUserGender(UserGender.MALE);
 		ud.setUsername("obama");
 		ud.setUserSalary(200.20);
-		udr.setAccountDetails(ud);
+		udr.setFullUserDetails(ud);
 		return udr;
 	}
 }
