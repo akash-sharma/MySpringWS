@@ -30,22 +30,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link UserData }
-     * 
-     */
-    public UserData createUserData() {
-        return new UserData();
-    }
-
-    /**
-     * Create an instance of {@link UserDetailsResponse }
-     * 
-     */
-    public UserDetailsResponse createUserDetailsResponse() {
-        return new UserDetailsResponse();
-    }
-
-    /**
      * Create an instance of {@link UserDetailsRequest }
      * 
      */
@@ -59,6 +43,22 @@ public class ObjectFactory {
      */
     public FullUserDetails createFullUserDetails() {
         return new FullUserDetails();
+    }
+
+    /**
+     * Create an instance of {@link UserData }
+     * 
+     */
+    public UserData createUserData() {
+        return new UserData();
+    }
+
+    /**
+     * Create an instance of {@link UserDetailsResponse }
+     * 
+     */
+    public UserDetailsResponse createUserDetailsResponse() {
+        return new UserDetailsResponse();
     }
 
 }

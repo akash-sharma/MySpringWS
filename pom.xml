@@ -85,6 +85,21 @@
                         </configuration>
                     </execution>
                     
+                    <execution>
+                    	<id>FileUploadWsdlService</id>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlUrls>
+                                <wsdlUrl>${basedir}/src/main/webapp/wsdl/FileUploadWsdlService.wsdl</wsdlUrl>
+                            </wsdlUrls>
+                            <packageName>com.akash.ws.client.stub.fileupload</packageName>
+                            <sourceDestDir>${basedir}/src/main/java</sourceDestDir>
+                            <destDir>${basedir}/target/jaxws</destDir>
+                        </configuration>
+                    </execution>
+                    
                 </executions>
             </plugin>
 			

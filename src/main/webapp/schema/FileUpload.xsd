@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"  
+		xmlns:cust="http://data.ws.akash.com/schema/fileupload" 
+		targetNamespace="http://data.ws.akash.com/schema/fileupload"
+		xmlns:xmime="http://www.w3.org/2005/05/xmlmime"
+		elementFormDefault="qualified">
+		
+	<xsd:element name="FileUploadRequest">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="fileContent" type="cust:fileContent"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:complexType name="fileContent">
+		<xsd:sequence>
+			<xsd:element name="file" type="xsd:base64Binary" xmime:expectedContentTypes="*/*"/>
+			<xsd:element name="fileName" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:element name="FileUploadResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="uploadStatus" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+</xsd:schema>

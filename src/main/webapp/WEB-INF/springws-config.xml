@@ -21,6 +21,10 @@
 
     <sws:annotation-driven />
     
+    <sws:dynamic-wsdl id="FileUploadWsdlService" portTypeName="FileUploadWsdlServicePort" locationUri="/endpoints/">
+    	<sws:xsd location="schema/FileUpload.xsd"/>
+	</sws:dynamic-wsdl>
+    
     <sws:dynamic-wsdl id="UserDetailsWsdlService" portTypeName="UserDetailsWsdlServicePort" locationUri="/endpoints/">
     	<sws:xsd location="schema/UserDetails.xsd"/>
 	</sws:dynamic-wsdl>
