@@ -30,19 +30,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link FileUploadResponse }
-     * 
-     */
-    public FileUploadResponse createFileUploadResponse() {
-        return new FileUploadResponse();
-    }
-
-    /**
      * Create an instance of {@link FileUploadRequest }
      * 
      */
     public FileUploadRequest createFileUploadRequest() {
         return new FileUploadRequest();
+    }
+
+    /**
+     * Create an instance of {@link FileUploadResponse }
+     * 
+     */
+    public FileUploadResponse createFileUploadResponse() {
+        return new FileUploadResponse();
     }
 
     /**

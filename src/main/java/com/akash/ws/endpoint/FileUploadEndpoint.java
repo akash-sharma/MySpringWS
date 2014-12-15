@@ -18,10 +18,13 @@ public class FileUploadEndpoint {
 
 public static final String NAMESPACE_URI="http://data.ws.akash.com/schema/fileupload";
 	
+//http://stackoverflow.com/questions/11316023/spring-ws-webservice-with-mtom-attachement-hello-world-test
+//http://stackoverflow.com/questions/14579441/spring-ws-client-mtom
+
 	@PayloadRoot(localPart="FileUploadRequest" , namespace=NAMESPACE_URI)
 	public @ResponsePayload FileUploadResponse anyRandomName(@RequestPayload FileUploadRequest fuReq) throws Exception {
 		
-		FileOutputStream fileOuputStream = new FileOutputStream("E:\\testing_ws.txt");
+		FileOutputStream fileOuputStream = new FileOutputStream("E:\\test2.mp4");
 		FileContent fileContent=fuReq.getFileContent();
 		DataHandler dataHandler = fileContent.getFile();
 		dataHandler.writeTo(fileOuputStream);

@@ -30,14 +30,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link UserDetailsRequest }
-     * 
-     */
-    public UserDetailsRequest createUserDetailsRequest() {
-        return new UserDetailsRequest();
-    }
-
-    /**
      * Create an instance of {@link FullUserDetails }
      * 
      */
@@ -51,6 +43,14 @@ public class ObjectFactory {
      */
     public UserData createUserData() {
         return new UserData();
+    }
+
+    /**
+     * Create an instance of {@link UserDetailsRequest }
+     * 
+     */
+    public UserDetailsRequest createUserDetailsRequest() {
+        return new UserDetailsRequest();
     }
 
     /**

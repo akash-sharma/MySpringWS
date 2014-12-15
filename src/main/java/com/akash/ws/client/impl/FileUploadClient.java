@@ -2,10 +2,10 @@ package com.akash.ws.client.impl;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.nio.file.Files;
 
 import javax.activation.DataHandler;
 
@@ -27,21 +27,22 @@ import com.akash.ws.client.stub.fileupload.FileUploadWsdlServicePortService;
 @Component
 public class FileUploadClient {
 
-	public void uploadFile() throws FileNotFoundException {
+	public void uploadFile() throws IOException {
 		FileUploadWsdlServicePortService fuwsps=new FileUploadWsdlServicePortService();
 		FileUploadWsdlServicePort fuwsp=fuwsps.getFileUploadWsdlServicePortSoap11();
 		FileUploadRequest fileUploadRequest = new FileUploadRequest();
 		FileContent fileContent=new FileContent();
 		
-		javax.activation.DataSource byteArrayDataSource=new ByteArrayDataSource();
-		File file = new File("E:\\Abc1.txt");
-		FileInputStream fin = new FileInputStream(file);
+		File file = new File("E:\\test.mp4");
 		
-//		DataHandler dataHandler = new DataHandler(new ByteArrayDataSource(inputStream))
+		byte[] byteArr=Files.readAllBytes(file.toPath());
 		
-//		
-		fileContent.setFile(null);
-		fileContent.setFileName("Abc1.txt");
+		ByteArrayDataSource byteArrayDataSource=new ByteArrayDataSource();
+		byteArrayDataSource.setBytes(byteArr);
+		DataHandler dataHandler = new DataHandler(byteArrayDataSource);
+		
+		fileContent.setFile(dataHandler);
+		fileContent.setFileName("test.mp4");
 		
 		fileUploadRequest.setFileContent(fileContent);
 		fuwsp.fileUpload(fileUploadRequest);
