@@ -3,6 +3,8 @@ WSDL URLs :
 http://localhost:8080/MySpringWS/endpoints/UserDetailsWsdlService.wsdl
 http://localhost:8080/MySpringWS/endpoints/EmployeeWsdlService.wsdl
 
+GZip in spring WS
+http://forum.spring.io/forum/spring-projects/web-services/83824-zipped-request
 
 MySpringWS
 ==========
